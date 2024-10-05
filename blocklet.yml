@@ -1,18 +1,14 @@
 title: mailhog
-description: A Blocklet Server blocklet
+description: Web and API based SMTP testing
 keywords:
-  - blocklet
-  - html
-  - static
-group: static
+  - mail
 did: z2qaDu2dLb67EbCTDtSDCcPtbjXYDQvZFero7
-main: app
 author:
   name: wangshijun
   email: wangshijun2010@gmail.com
 repository:
   type: git
-  url: git+https://github.com/blocklet/create-blocklet.git
+  url: git+https://github.com/mailhog/MailHog.git
 specVersion: 1.2.8
 version: 0.1.0
 logo: logo.png
@@ -25,7 +21,15 @@ interfaces:
     path: /
     prefix: "*"
     port: BLOCKLET_PORT
+    containerPort: 8025
     protocol: http
+  - type: docker
+    name: smtp
+    path: /
+    prefix: "*"
+    port: BLOCKLET_SMTP_PORT
+    containerPort: 1025
+    protocol: tcp
 community: ""
 documentation: ""
 homepage: ""
@@ -43,3 +47,6 @@ environments: []
 capabilities: {}
 screenshots: []
 components: []
+docker:
+  image: mailhog/mailhog
+  volumes: []

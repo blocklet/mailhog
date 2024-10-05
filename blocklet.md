@@ -1,3 +1,3 @@
-# template-html
+# MailHog
 
-A html template for creating a new blocklet project.
+Web and API based SMTP testing
